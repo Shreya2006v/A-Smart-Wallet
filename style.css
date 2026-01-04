@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    min-height: 100vh;
+    
+    /* --- BACKGROUND SETTINGS --- */
+    
+    /* Fallback color if image fails */
+    background-color: #2c3e50; 
+    
+    /* OPTION A: Professional Abstract Image */
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+    
+    /* Make the image cover the whole screen perfectly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background still when scrolling */
+}
+
+/* OPTION B: If you prefer a "Graph Paper" Pattern, DELETE the body above and UNCOMMENT this: */
+/*
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    background-image: radial-gradient(#adb5bd 1px, transparent 1px);
+    background-size: 20px 20px; 
+}
+*/
+
+.card {
+    /* Made slighty see-through for a cool glass effect */
+    background: rgba(255, 255, 255, 0.95); 
+    width: 380px;
+    padding: 30px;
+    border-radius: 15px;
+    
+    /* Stronger shadow to pop against the busy background */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
+    
+    text-align: center;
+    height: fit-content;
+    backdrop-filter: blur(5px); /* Blurs the background behind the card */
+}
+
+/* UTILITY: Hides elements */
+.hidden {
+    display: none;
+}
+
+h1 { color: #2c3e50; margin: 10px 0 20px 0; }
+h2 { margin-top: 0; color: #333; }
+p { color: #666; font-size: 14px; margin-bottom: 20px;}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 5px rgba(118, 75, 162, 0.3);
+}
+
+.error-text {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 20px;
+    margin: 5px 0;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    transition: transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-start { width: 100%; background: linear-gradient(to right, #667eea, #764ba2); }
+.btn-income { width: 48%; background-color: #2ecc71; }
+.btn-expense { width: 48%; background-color: #e74c3c; }
+
+ul { padding: 0; margin-top: 20px; list-style: none; }
+
+li {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.plus { border-left: 5px solid #2ecc71; color: #2ecc71; font-weight: bold; }
+.minus { border-left: 5px solid #e74c3c; color: #e74c3c; font-weight: bold; }
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+.shake { animation: shake 0.3s ease-in-out; }

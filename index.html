@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="setupSection" class="card">
+        <h2>Welcome to SmartWallet</h2>
+        <p>Please enter your current bank balance to begin:</p>
+        
+        <input type="number" id="startBalanceInput" placeholder="e.g. 5000">
+        
+        <button class="btn-start" onclick="initializeApp()">Start Tracking</button>
+    </div>
+
+    <div id="appSection" class="card hidden">
+        <h2>My Dashboard</h2>
+        <h1>Balance: ₹<span id="balanceDisplay">0</span></h1>
+
+        <div class="input-group">
+            <input type="text" id="descInput" placeholder="Description (e.g. Burger)">
+            <input type="number" id="amountInput" placeholder="Amount (e.g. 150)">
+            
+            <p id="errorMsg" class="error-text"></p>
+
+            <div class="button-row">
+                <button class="btn-income" onclick="addTransaction('income')">Credit (+)</button>
+                <button class="btn-expense" onclick="addTransaction('expense')">Debit (-)</button>
+            </div>
+        </div>
+
+        <ul id="transactionList">
+            </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
